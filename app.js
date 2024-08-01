@@ -70,6 +70,7 @@ function createTodo(todo, todoIndex) {
 //this is for the createTodo()
     check_box.checked = allTodos[todoIndex].done;
 //return
+    console.log("add todo!")
     return todoLi;
 }
 
@@ -82,9 +83,11 @@ function deleteTodo(todoIndex) {
 function saveTodos() {
     const todosJson = JSON.stringify(allTodos);
     localStorage.setItem("todos", todosJson);
+    console.log("Saved todos:", todosJson)
 }
 //get the saved todo_list
 function getTodos() {
     const todos = localStorage.getItem("todos") || "[]";
+    console.log("Retrieved todos:", todos);
     return JSON.parse(todos);
 }
