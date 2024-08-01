@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="add.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <div class="wrapper">
+        <ul class="todo-list"></ul>
+    </div>
+    
+    <div id="task"></div>
+
+    <div class="add-button-wrapper">
+        <div class="add-button-text">
+            Add some work
+        </div>
+        <div class="add-button">
+            <img src="asset/add.svg" alt="add-element">
+        </div>
+    </div>
+    <div class="add-task-view">
+        <form id="add-task-form">
+            <input type="text" id="add-task" placeholder="add your work" autocomplete="off">
+            <br>
+            <div class="add-task-view-button">
+                <button type="button" id="back-button">back</button>
+                <button type="submit" id="submit-button">add</button>
+            </div>
+        </form>
+
+    </div>
+    <div></div>
+    
+</body>
+</html>

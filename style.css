@@ -1,0 +1,187 @@
+:root{
+    --background-color: #222831;
+    --primary-color: #31363F;
+    --accent-color: #76ABAE;
+    --text-color: #EEEEEE;
+}
+*{
+    margin: 0;
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    color: var(--text-color);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--background-color);
+    height: 100vh;
+}
+
+h1{
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+.wrapper{
+    margin: 0 10px 0 10px;
+    width: 100%;
+
+}
+.todo-list{
+    list-style-type: none;
+    margin-right: 10px;
+}
+.todo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.todo input[type="checkbox"]{
+    display: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.todo input[type="checkbox"]:checked ~ .custom-checkbox {
+    background-color: var(--accent-color);
+}
+.todo input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: var(--text-color);
+}
+
+.todo-text {
+    flex-grow: 1;
+    margin-left: 10px;
+    text-decoration: none;
+    user-select: none;
+}
+
+.todo input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    color: #3a3f47;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button svg{
+    transition: 200ms ease;
+}
+
+.delete-button:hover svg{
+    fill: red;
+}
+
+.add-button-wrapper{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    display: flex;
+}
+.add-button-text{
+    margin-right: 20px;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+
+    font-size: .8em;
+    font-style: italic;
+    text-transform: lowercase;
+    font-weight: lighter;
+    transition: 300ms ease;
+}
+.add-button{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease;
+}
+.add-button:hover{
+    background-color: #3a3f47;
+}
+
+#task{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;   
+
+    box-sizing: border-box;
+    border: none;
+    background-color: #5f6368;  
+    
+    transition: 300ms ease;
+}
+#task:hover{
+    width: 100px;
+}
+
+.add-task-view{
+    position: fixed;   
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(255, 255, 255, 0.185);
+    backdrop-filter: blur(5px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-task{
+    height: 25px;
+    border: none;
+    outline: none;
+    
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+#add-task:focus{
+    background-color: rgba(231, 231, 231, 0.733);
+}
+
+.add-task-view-button{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.add-task-view-button button{
+    width: 30%;
+}
